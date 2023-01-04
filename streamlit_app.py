@@ -43,8 +43,8 @@ if authentication_status:
     except Exception as e:
         st.error(e)
 
-try:
-    if authenticator.register_user('Register user', preauthorization=False):
-        st.success('User registered successfully')
-except Exception as e:
-    st.error(e)
+#try:
+#    if authenticator.register_user('Register user', preauthorization=False):
+#        st.success('User registered successfully')
+#except Exception as e:
+#    st.error(e)
