@@ -28,24 +28,24 @@ elif authentication_status == False:
 elif authentication_status == None:
     st.warning('Please enter your username and password')
 
-if st.session_state["authentication_status"]:
-    authenticator.logout('Logout', 'main')
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Some content')
-elif st.session_state["authentication_status"] == False:
-    st.error('Username/password is incorrect')
-elif st.session_state["authentication_status"] == None:
-    st.warning('Please enter your username and password')
-
-if authentication_status:
-    try:
-        if authenticator.reset_password(username, 'Reset password'):
-            st.success('Password modified successfully')
-    except Exception as e:
-        st.error(e)
-
-try:
-    if authenticator.register_user('Register user', preauthorization=False):
-        st.success('User registered successfully')
-except Exception as e:
-    st.error(e)
+#if st.session_state["authentication_status"]:
+#    authenticator.logout('Logout', 'main')
+#    st.write(f'Welcome *{st.session_state["name"]}*')
+#    st.title('Some content')
+#elif st.session_state["authentication_status"] == False:
+#    st.error('Username/password is incorrect')
+#elif st.session_state["authentication_status"] == None:
+#    st.warning('Please enter your username and password')
+#
+#if authentication_status:
+#    try:
+#        if authenticator.reset_password(username, 'Reset password'):
+#            st.success('Password modified successfully')
+#    except Exception as e:
+#        st.error(e)
+#
+#try:
+#    if authenticator.register_user('Register user', preauthorization=False):
+#        st.success('User registered successfully')
+#except Exception as e:
+#    st.error(e)
