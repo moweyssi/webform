@@ -28,15 +28,15 @@ elif st.session_state["authentication_status"] == False:
 elif st.session_state["authentication_status"] == None:
     st.warning('Please enter your username and password')
 
-#if authentication_status:
-#    try:
-#        if authenticator.reset_password(username, 'Reset password'):
-#            st.success('Password modified successfully')
-#    except Exception as e:
-#        st.error(e)
+if authentication_status:
+    try:
+        if authenticator.reset_password(username, 'Reset password'):
+            st.success('Password modified successfully')
+    except Exception as e:
+        st.error(e)
 
-#try:
-#    if authenticator.register_user('Register user', preauthorization=False):
-#        st.success('User registered successfully')
-#except Exception as e:
-#    st.error(e)
+try:
+    if authenticator.register_user('Register user', preauthorization=False):
+        st.success('User registered successfully')
+except Exception as e:
+    st.error(e)
