@@ -6,7 +6,7 @@ from yaml import SafeLoader
 #print(hashed_passwords[0])
 #print(hashed_passwords[1])
 
-with open('../config.yaml') as file:
+with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 authenticator = stauth.Authenticate(
