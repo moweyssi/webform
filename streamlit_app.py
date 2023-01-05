@@ -1,13 +1,13 @@
 import streamlit as st
 import streamlit_authenticator as stauth
-import yaml
-from yaml import SafeLoader
+import toml
+
 #hashed_passwords = stauth.Hasher(['123', '456']).generate()
 #print(hashed_passwords[0])
 #print(hashed_passwords[1])
 
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
+with open('.streamlit/secrets.toml') as file:
+    config = toml.load(file)
 
 authenticator = stauth.Authenticate(
     config['credentials'],
@@ -16,6 +16,7 @@ authenticator = stauth.Authenticate(
     config['cookie']['expiry_days'],
     config['preauthorized']
 )
+
 name, authentication_status, username = authenticator.login('Login', 'main')
 
 
@@ -40,5 +41,5 @@ try:
         st.success('User registered successfully')
 except Exception as e:
     st.error(e)
-with open('config.yaml', 'w') as file:
-    yaml.dump(config, file, default_flow_style=False)
+with open('.streamlit/secrets.toml', 'w') as file:
+    toml.dump(config, file)
