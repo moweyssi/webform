@@ -6,7 +6,7 @@ import toml
 #print(hashed_passwords[0])
 #print(hashed_passwords[1])
 
-with open('.streamlit/secrets.toml') as file:
+with open('secrets.toml') as file:
     config = toml.load(file)
 
 authenticator = stauth.Authenticate(
@@ -41,5 +41,5 @@ try:
         st.success('User registered successfully')
 except Exception as e:
     st.error(e)
-with open('.streamlit/secrets.toml', 'w') as file:
+with open('secrets.toml', 'w') as file:
     toml.dump(config, file)
