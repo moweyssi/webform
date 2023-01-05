@@ -40,4 +40,4 @@ try:
         st.success('User registered successfully')
 except Exception as e:
     st.error(e)
-toml.dump('.streamlit/secrets.toml')
+toml.dump(config,'.streamlit/secrets.toml')
