@@ -8,7 +8,7 @@ import toml
 
 with open('secrets.toml') as file:
     config = toml.load(file)
-
+print(config)
 authenticator = stauth.Authenticate(
     st.secrets['credentials'],
     st.secrets['cookie']['name'],
